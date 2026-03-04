@@ -1,0 +1,20 @@
+import LoginForm from "../components/login/LoginForm";
+import LoginHero from "../components/login/LoginHero";
+
+export default function LoginScreen() {
+    return <>
+        <main className="min-h-screen bg-slate-50 py-10 flex items-center justify-center">
+
+            <div className="container max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 p-4 items-start">
+
+                <div className=" p-8 md:p-10 rounded-2xl ">
+                    <LoginHero />
+                </div>
+                <div className=" p-8 md:p-10 rounded-2xl  ">
+                    <LoginForm />
+                </div>
+
+            </div>
+        </main>
+    </>
+}
