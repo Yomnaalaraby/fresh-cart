@@ -19,12 +19,14 @@ export default function OrdersScreen() {
 
     useEffect(() => {
         const fetchOrders = async () => {
-            const response = await getUserOrders({ id: userInfo.id });
-            setOrders(response)
+            if (!userInfo?.id) return;
+
+            const response = await getUserOrders({ id: userInfo.id as string });
+            setOrders(response);
         };
 
-        fetchOrders()
-    }, []);
+        fetchOrders();
+    }, [userInfo?.id]);
 
 
     if (!orders || orders.length === 0) {
